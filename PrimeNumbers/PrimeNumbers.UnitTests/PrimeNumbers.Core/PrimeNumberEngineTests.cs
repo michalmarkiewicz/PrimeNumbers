@@ -2,7 +2,6 @@
 using NSubstitute;
 using NUnit.Framework;
 using PrimeNumbers.Contracts;
-using PrimeNumbers.Core;
 using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core

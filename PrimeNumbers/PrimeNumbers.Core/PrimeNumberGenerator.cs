@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
@@ -9,6 +10,9 @@ namespace PrimeNumbers.Core
 
         public PrimeNumberGenerator(int numberOfPrimesToGet)
         {
+            if (numberOfPrimesToGet < 1)
+                throw new ArgumentException("Value numberOfPrimesToGet have to be greater than 0.");
+
             this.numberOfPrimesToGet = numberOfPrimesToGet;
         }
 

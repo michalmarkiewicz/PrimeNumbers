@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
@@ -143,6 +144,14 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
             var result = sut.Generate(-45);
 
             CollectionAssert.AreEqual(expected, result);
+        }
+
+        [TestCase(-1)]
+        [TestCase(0)]
+        [TestCase(-3)]
+        public void InitilizeObject_NumberOfPrimesToGetNegativeOrZero_ThrowArgumentException(int number)
+        {
+            Assert.Throws<ArgumentException>(() => new PrimeNumberGeneratorBuilder().WithPrimeNumbers(number).Build());
         }
     }
 }
