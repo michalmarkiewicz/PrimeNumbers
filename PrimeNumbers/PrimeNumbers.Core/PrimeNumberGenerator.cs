@@ -6,6 +6,13 @@ namespace PrimeNumbers.Core
 {
     public class PrimeNumberGenerator
     {
+        private readonly int numberOfPrimesToGet;
+
+        public PrimeNumberGenerator(int numberOfPrimesToGet)
+        {
+            this.numberOfPrimesToGet = numberOfPrimesToGet;
+        }
+
         public bool IsPrime(int number)
         {
             if (number == 2 || number == int.MaxValue)
@@ -24,7 +31,8 @@ namespace PrimeNumbers.Core
         public IEnumerable<int> Generate(int fromNumber)
         {
             var primes = new List<int>();
-            while (primes.Count < 1)
+
+            while (primes.Count < numberOfPrimesToGet)
             {
                 if (IsPrime(fromNumber))
                     primes.Add(fromNumber);

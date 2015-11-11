@@ -1,6 +1,4 @@
-﻿using System;
-using NUnit.Framework;
-using PrimeNumbers.Core;
+﻿using NUnit.Framework;
 using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
@@ -87,6 +85,28 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         {
             var sut = new PrimeNumberGeneratorBuilder().Build();
             var expected = new[] { 809 };
+
+            var result = sut.Generate(798);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Generate_StartingNumberIs0_ReturnFirst5PrimesAfterZero()
+        {
+            var expected = new[] { 2, 3, 5, 7, 11 };
+            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(5).Build();
+
+            var result = sut.Generate(0);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Generate_StartingNumberIs_Return10PrimesAfterInputNumber()
+        {
+            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(10).Build();
+            var expected = new[] { 809, 811, 821, 823, 827, 829, 839, 853, 857, 859 };
 
             var result = sut.Generate(798);
 
