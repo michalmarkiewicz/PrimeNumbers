@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
@@ -11,6 +12,10 @@ namespace PrimeNumbers.Core
 
         public PrimeNumberEngine(IPrimeNumberGenerator generator, IGridMultiplicator multiplicator, IArrayFormatter formatter)
         {
+            if (generator == null) throw new ArgumentNullException(nameof(generator));
+            if (multiplicator == null) throw new ArgumentNullException(nameof(multiplicator));
+            if (formatter == null) throw new ArgumentNullException(nameof(formatter));
+
             this.generator = generator;
             this.multiplicator = multiplicator;
             this.formatter = formatter;

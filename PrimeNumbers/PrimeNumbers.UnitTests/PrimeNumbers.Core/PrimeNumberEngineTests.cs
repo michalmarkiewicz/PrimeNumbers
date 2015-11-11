@@ -1,7 +1,9 @@
-﻿using NSubstitute;
+﻿using System;
+using NSubstitute;
 using NUnit.Framework;
 using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
+using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 {
@@ -36,6 +38,30 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
             var result = sut.GetPrimes(1);
 
             Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void InitializeObject_NullPrimeNumberGenerator_ThrowArgumentNullException()
+        {
+            var builder = new PrimeNumberEngineBuilder().WithGenerator(null);
+
+            Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
+        }
+
+        [Test]
+        public void InitializeObject_NullGridMultiplicator_ThrowArgumentNullException()
+        {
+            var builder = new PrimeNumberEngineBuilder().WithGridMultiplicator(null);
+
+            Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
+        }
+
+        [Test]
+        public void InitializeObject_NullArrayFormatter_ThrowArgumentNullException()
+        {
+            var builder = new PrimeNumberEngineBuilder().WithFormatter(null);
+
+            Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
         }
     }
 }
