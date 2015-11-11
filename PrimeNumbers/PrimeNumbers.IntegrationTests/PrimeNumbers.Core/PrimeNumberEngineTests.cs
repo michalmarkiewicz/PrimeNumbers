@@ -17,7 +17,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core
                                                     .WithFormatter(new GridFormatter())
                                                     .Build();
 
-            var result = sut.GetPrimes(2);
+            var result = sut.GetPrimes("2");
 
             Assert.AreEqual(expected, result);
         }
@@ -32,7 +32,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core
                                                     .WithFormatter(new GridFormatter())
                                                     .Build();
 
-            var result = sut.GetPrimes(2);
+            var result = sut.GetPrimes("2");
 
             Assert.AreEqual(expected, result);
         }
