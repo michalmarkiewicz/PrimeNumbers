@@ -10,30 +10,20 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
     [TestFixture]
     public class PrimeNumberEngineTests
     {
+        private IArrayFormatter formatter;
+
+        [SetUp]
+        public void Setup()
+        {
+            formatter = Substitute.For<IArrayFormatter>();
+        }
+
         [Test]
         public void GetPrimes_ReadStringValue_GenerateOnePrimesAndFormattGridToString()
         {
             var expected = " \t2\r\n2\t4";
-            var generator = Substitute.For<IPrimeNumberGenerator>();
-            var multiplicator = Substitute.For<IGridMultiplicator>();
-            var formatter = Substitute.For<IArrayFormatter>();
-            formatter.Formatt(null).ReturnsForAnyArgs(x => " \t2\r\n2\t4");
-            var sut = new PrimeNumberEngine(generator, multiplicator, formatter);
-
-            var result = sut.GetPrimes(1);
-
-            Assert.AreEqual(expected, result);
-        }
-
-        [Test]
-        public void GetPrimes_ReadStringValue_GenerateThreePrimesAndFormattGridToString()
-        {
-            var expected = " \t2\t3\r\n2\t4\t6\r\n3\t6\t9";
-            var generator = Substitute.For<IPrimeNumberGenerator>();
-            var multiplicator = Substitute.For<IGridMultiplicator>();
-            var formatter = Substitute.For<IArrayFormatter>();
-            formatter.Formatt(null).ReturnsForAnyArgs(x => " \t2\t3\r\n2\t4\t6\r\n3\t6\t9");
-            var sut = new PrimeNumberEngine(generator, multiplicator, formatter);
+            formatter.Formatt(null).ReturnsForAnyArgs(x => expected);
+            var sut = new PrimeNumberEngineBuilder().WithFormatter(formatter).Build();
 
             var result = sut.GetPrimes(1);
 
