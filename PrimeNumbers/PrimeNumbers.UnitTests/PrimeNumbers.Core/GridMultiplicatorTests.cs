@@ -8,6 +8,18 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
     public class GridMultiplicatorTests
     {
         [Test]
+        public void Calculate_OnePrimesInCollection_MultiplyRowsWithCollumnsAndReturnMultiArray()
+        {
+            var expected = new[,] { { -1, 2 }, { 2, 4 } };
+            var data = new List<int>() { 2 };
+            var sut = new GridMultiplicator();
+
+            var result = sut.Calculate(data);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
         public void Calculate_TwoPrimesInCollection_MultiplyRowsWithCollumnsAndReturnMultiArray()
         {
             var expected = new[,] { { -1, 2, 3 }, { 2, 4, 6 }, { 3, 6, 9 } };
@@ -27,6 +39,28 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
             var sut = new GridMultiplicator();
 
             var result = sut.Calculate(data);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Calculate_EmptyCollection_ReturnEmptyArray()
+        {
+            var expected = new int[0, 0];
+            var sut = new GridMultiplicator();
+
+            var result = sut.Calculate(new List<int>());
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Calculate_NullCollection_ReturnEmptyArray()
+        {
+            var expected = new int[0, 0];
+            var sut = new GridMultiplicator();
+
+            var result = sut.Calculate(null);
 
             CollectionAssert.AreEqual(expected, result);
         }

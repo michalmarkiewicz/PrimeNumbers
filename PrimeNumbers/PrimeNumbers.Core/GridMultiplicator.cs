@@ -8,6 +8,9 @@ namespace PrimeNumbers.Core
     {
         public int[,] Calculate(List<int> values)
         {
+            if (values == null || values.Count < 1)
+                return new int[0, 0];
+
             var rowSize = values.Count + 1;
             var grid = new int[rowSize, rowSize];
 
