@@ -21,10 +21,9 @@ namespace PrimeNumbers.Core
             this.formatter = formatter;
         }
 
-        public string GetPrimes(string primesAfterNumber)
+        public string GetPrimes(int primesAfterNumber)
         {
-            var number = int.Parse(primesAfterNumber);
-            var primes = generator.Generate(number).ToList();
+            var primes = generator.Generate(primesAfterNumber).ToList();
             var grid = multiplicator.Calculate(primes);
 
             return formatter.Formatt(grid);

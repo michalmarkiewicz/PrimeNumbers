@@ -24,7 +24,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
             formatter.Formatt(null).ReturnsForAnyArgs(x => expected);
             var sut = new PrimeNumberEngineBuilder().WithFormatter(formatter).Build();
 
-            var result = sut.GetPrimes("1");
+            var result = sut.GetPrimes(1);
 
             Assert.AreEqual(expected, result);
         }

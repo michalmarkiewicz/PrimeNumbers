@@ -2,6 +2,6 @@
 {
     public interface IPrimeNumberEngine
     {
-        string GetPrimes(string primesAfterNumber);
+        string GetPrimes(int primesAfterNumber);
     }
 }

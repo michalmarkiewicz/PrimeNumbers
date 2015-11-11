@@ -26,18 +26,36 @@ namespace PrimeNumbers.ConsoleApp
                     if (input.ToLower() == "exit")
                         break;
 
-                    var result = engine.GetPrimes(input);
+                    var number = ConvertInput(input);
+                    var result = engine.GetPrimes(number);
 
                     Console.WriteLine(result);
                     Console.WriteLine();
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
                     Console.WriteLine();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                     Console.WriteLine("Press any key to try again");
+                    Console.WriteLine();
                     Console.ReadKey();
                 }
+            }
+        }
+
+        private static int ConvertInput(string input)
+        {
+            try
+            {
+                return int.Parse(input);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(string.Format("Couldn't parse input value to int. Value: {0}", input));
             }
         }
     }
