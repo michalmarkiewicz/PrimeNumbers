@@ -67,5 +67,11 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 
             Assert.False(result);
         }
+
+        [Test]
+        public void Generate_InputIntNumber_ReturnNext5Primes()
+        {
+            
+        }
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D13227B-6979-4E07-9649-277CE33696E6}</ProjectGuid>
+    <ProjectGuid>{C037A16E-24A3-4AA4-BC17-88DFA07E643A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrimeNumbers.UnitTests</RootNamespace>
-    <AssemblyName>PrimeNumbers.UnitTests</AssemblyName>
+    <RootNamespace>PrimeNumbers.Tests.Common</RootNamespace>
+    <AssemblyName>PrimeNumbers.Tests.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,19 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrimeNumbers.Core\PrimeNumberGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\PrimeNumbers.Core\PrimeNumbers.Core.csproj">
-      <Project>{069a2843-c4bf-4ab5-987c-18fe55f50291}</Project>
-      <Name>PrimeNumbers.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PrimeNumbers.Tests.Common\PrimeNumbers.Tests.Common.csproj">
-      <Project>{c037a16e-24a3-4aa4-bc17-88dfa07e643a}</Project>
-      <Name>PrimeNumbers.Tests.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
