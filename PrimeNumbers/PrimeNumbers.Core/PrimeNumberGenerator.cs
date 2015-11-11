@@ -15,7 +15,7 @@ namespace PrimeNumbers.Core
 
         public bool IsPrime(int number)
         {
-            if (number == 2 || number == int.MaxValue)
+            if (number == 2 || CheckIfMaxInt(number))
                 return true;
 
             if (number < 0 || (number & 1) == 0)
@@ -32,6 +32,12 @@ namespace PrimeNumbers.Core
         {
             var primes = new List<int>();
 
+            if (CheckIfMaxInt(fromNumber))
+                return primes;
+
+            if (CheckIfNegativeValue(fromNumber))
+                fromNumber = 0;
+
             while (primes.Count < numberOfPrimesToGet)
             {
                 if (IsPrime(fromNumber))
@@ -41,6 +47,16 @@ namespace PrimeNumbers.Core
             }
 
             return primes;
+        }
+
+        private bool CheckIfNegativeValue(int fromNumber)
+        {
+            return fromNumber < 0;
+        }
+
+        private bool CheckIfMaxInt(int fromNumber)
+        {
+            return fromNumber == int.MaxValue;
         }
     }
 }

@@ -105,10 +105,42 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [Test]
         public void Generate_StartingNumberIs_Return10PrimesAfterInputNumber()
         {
-            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(10).Build();
             var expected = new[] { 809, 811, 821, 823, 827, 829, 839, 853, 857, 859 };
+            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(10).Build();
 
             var result = sut.Generate(798);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Generate_MaxIntValue_ReturnEmptyCollection()
+        {
+            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(10).Build();
+
+            var result = sut.Generate(int.MaxValue);
+
+            CollectionAssert.IsEmpty(result);
+        }
+
+        [Test, MaxTime(1000)]
+        public void Generate_MinIntValue_ReturnFirstThreePrimeNumber()
+        {
+            var expected = new[] { 2, 3, 5 };
+            var sut = new PrimeNumberGeneratorBuilder().WithPrimeNumbers(3).Build();
+
+            var result = sut.Generate(int.MinValue);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Generate_NegativeValue_ReturnFirstPrime()
+        {
+            var expected = new[] { 2 };
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
+            var result = sut.Generate(-45);
 
             CollectionAssert.AreEqual(expected, result);
         }
