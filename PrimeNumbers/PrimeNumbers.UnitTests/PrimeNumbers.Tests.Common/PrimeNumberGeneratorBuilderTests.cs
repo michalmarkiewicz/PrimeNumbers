@@ -8,7 +8,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Tests.Common
     public class PrimeNumberGeneratorBuilderTests
     {
         [Test]
-        public void Build_ReturnInstanceOfPrimeNumberGenerator()
+        public void Build_ReturnPrimeNumberGeneratorInstance()
         {
             var generator = new PrimeNumberGeneratorBuilder().Build();
 

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class GridMultiplicator
+    public class GridMultiplicator : IGridMultiplicator
     {
         public int[,] Calculate(List<int> numbers)
         {

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.Core", "PrimeN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.Tests.Common", "PrimeNumbers.Tests.Common\PrimeNumbers.Tests.Common.csproj", "{C037A16E-24A3-4AA4-BC17-88DFA07E643A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.Contracts", "PrimeNumbers.Contracts\PrimeNumbers.Contracts.csproj", "{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{C037A16E-24A3-4AA4-BC17-88DFA07E643A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C037A16E-24A3-4AA4-BC17-88DFA07E643A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C037A16E-24A3-4AA4-BC17-88DFA07E643A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

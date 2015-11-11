@@ -41,8 +41,15 @@
   <ItemGroup>
     <Compile Include="GridFormatter.cs" />
     <Compile Include="GridMultiplicator.cs" />
+    <Compile Include="PrimeNumberEngine.cs" />
     <Compile Include="PrimeNumberGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrimeNumbers.Contracts\PrimeNumbers.Contracts.csproj">
+      <Project>{EA17FAF7-DFDB-4690-A065-21DF6E2258C2}</Project>
+      <Name>PrimeNumbers.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

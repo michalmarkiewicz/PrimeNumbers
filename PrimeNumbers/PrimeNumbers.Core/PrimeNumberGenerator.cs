@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class PrimeNumberGenerator
+    public class PrimeNumberGenerator : IPrimeNumberGenerator
     {
         private readonly int numberOfPrimesToGet;
 

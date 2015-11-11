@@ -1,8 +1,9 @@
 ﻿using System.Text;
+using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class GridFormatter
+    public class GridFormatter : IArrayFormatter
     {
         public string Formatt(int[,] grid)
         {
