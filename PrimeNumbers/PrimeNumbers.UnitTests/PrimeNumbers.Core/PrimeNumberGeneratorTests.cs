@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using PrimeNumbers.Core;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
@@ -38,7 +39,33 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         {
             var result = sut.IsPrime(number);
 
-            Assert.IsFalse(result);
+            Assert.False(result);
+        }
+
+        [Test]
+        public void IsPrime_IntMax_DontThrowException()
+        {
+            Assert.DoesNotThrow(() => sut.IsPrime(int.MaxValue));
+        }
+
+        [Test]
+        public void IsPrime_IntMax_ReturnTrue()
+        {
+            Console.WriteLine(int.MaxValue);
+            var result = sut.IsPrime(int.MaxValue);
+
+            Assert.True(result);
+        }
+
+        [TestCase(-1)]
+        [TestCase(-123423)]
+        [TestCase(-13)]
+        [TestCase(int.MinValue)]
+        public void IsPrime_NegativeValue_ReturnFalse(int number)
+        {
+            var result = sut.IsPrime(number);
+
+            Assert.False(result);
         }
     }
 }
