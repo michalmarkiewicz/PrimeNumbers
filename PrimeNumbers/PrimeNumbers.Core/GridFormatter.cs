@@ -7,7 +7,10 @@ namespace PrimeNumbers.Core
     {
         public string Formatt(int[,] grid)
         {
-            var sb = new StringBuilder(" \t");
+            if (grid == null)
+                return string.Empty;
+
+            var sb = new StringBuilder();
 
             var rows = grid.GetLength(0);
             for (int i = 0; i < rows; i++)
@@ -16,7 +19,7 @@ namespace PrimeNumbers.Core
                 for (int j = 0; j < columns; j++)
                 {
                     if (i == 0 && j == 0)
-                        continue;
+                        sb.Append(" \t");
                     else if (i != rows - 1 && j == columns - 1)
                         sb.AppendLine(grid[i, j].ToString());
                     else if (i == rows - 1 && j == columns - 1)

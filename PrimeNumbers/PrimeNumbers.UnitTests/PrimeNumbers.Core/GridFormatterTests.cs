@@ -31,5 +31,25 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void Formatt_TwoDimensionalArrayWithNoElements_ReturnEmptyString()
+        {
+            var sut = new GridFormatter();
+
+            var result = sut.Formatt(new int[0, 0]);
+
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [Test]
+        public void Formatt_NullArray_DontThrowExceptionAndReturnNullString()
+        {
+            var sut = new GridFormatter();
+
+            var result = sut.Formatt(null);
+
+            Assert.AreEqual(string.Empty, result);
+        }
     }
 }
