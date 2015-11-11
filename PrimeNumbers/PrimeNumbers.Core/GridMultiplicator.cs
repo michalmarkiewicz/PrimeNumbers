@@ -6,37 +6,44 @@ namespace PrimeNumbers.Core
 {
     public class GridMultiplicator
     {
-        public int[,] Calculate(List<int> values)
+        public int[,] Calculate(List<int> numbers)
         {
-            if (values == null || values.Count < 1)
+            if (numbers == null || numbers.Count < 1)
                 return new int[0, 0];
+            
+            var grid = Grid(numbers);
 
-            var rowSize = values.Count + 1;
+            return grid;
+        }
+
+        private int[,] Grid(List<int> numbers)
+        {
+            var rowSize = numbers.Count + 1; ;
             var grid = new int[rowSize, rowSize];
 
-            for (int i = 0; i < rowSize; i++)
+            for (int rows = 0; rows < rowSize; rows++)
             {
-                for (int j = 0; j < rowSize; j++)
+                for (int columns = 0; columns < rowSize; columns++)
                 {
-                    if (i == 0)
+                    if (rows == 0)
                     {
-                        if (j == 0)
+                        if (columns == 0)
                         {
-                            grid[i, j] = -1;
+                            grid[rows, columns] = -1;
                             continue;
                         }
 
-                        grid[i, j] = values[j - 1];
+                        grid[rows, columns] = numbers[columns - 1];
                     }
                     else
                     {
-                        if (j == 0)
+                        if (columns == 0)
                         {
-                            grid[i, j] = values[i - 1];
+                            grid[rows, columns] = numbers[rows - 1];
                             continue;
                         }
 
-                        grid[i, j] = values[i - 1] * values[j - 1];
+                        grid[rows, columns] = numbers[rows - 1] * numbers[columns - 1];
                     }
                 }
             }
