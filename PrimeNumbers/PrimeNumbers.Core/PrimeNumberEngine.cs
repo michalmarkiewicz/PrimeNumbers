@@ -4,7 +4,7 @@ using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class PrimeNumberEngine
+    public class PrimeNumberEngine : IPrimeNumberEngine
     {
         private readonly IPrimeNumberGenerator generator;
         private readonly IGridMultiplicator multiplicator;

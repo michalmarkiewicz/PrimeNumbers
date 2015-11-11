@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IArrayFormatter.cs" />
     <Compile Include="IGridMultiplicator.cs" />
+    <Compile Include="IPrimeNumberEngine.cs" />
     <Compile Include="IPrimeNumberGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
