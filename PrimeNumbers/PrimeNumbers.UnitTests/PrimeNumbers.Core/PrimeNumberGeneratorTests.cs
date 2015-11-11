@@ -1,20 +1,13 @@
 ﻿using System;
 using NUnit.Framework;
 using PrimeNumbers.Core;
+using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 {
     [TestFixture]
     public class PrimeNumberGeneratorTests
     {
-        private PrimeNumberGenerator sut;
-
-        [SetUp]
-        public void SetUp()
-        {
-            sut = new PrimeNumberGenerator();
-        }
-
         [TestCase(2)]
         [TestCase(3)]
         [TestCase(41)]
@@ -24,6 +17,8 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [TestCase(533000389)]
         public void IsPrime_NumberIsPrime_ReturnTrue(int number)
         {
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
             var result = sut.IsPrime(number);
 
             Assert.True(result);
@@ -37,6 +32,8 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [TestCase(382754)]
         public void IsPrime_NumberIsNotPrime_ReturnFalse(int number)
         {
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
             var result = sut.IsPrime(number);
 
             Assert.False(result);
@@ -45,13 +42,16 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [Test]
         public void IsPrime_IntMax_DontThrowException()
         {
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
             Assert.DoesNotThrow(() => sut.IsPrime(int.MaxValue));
         }
 
         [Test]
         public void IsPrime_IntMax_ReturnTrue()
         {
-            Console.WriteLine(int.MaxValue);
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
             var result = sut.IsPrime(int.MaxValue);
 
             Assert.True(result);
@@ -63,15 +63,34 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [TestCase(int.MinValue)]
         public void IsPrime_NegativeValue_ReturnFalse(int number)
         {
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
             var result = sut.IsPrime(number);
 
             Assert.False(result);
         }
 
         [Test]
-        public void Generate_InputIntNumber_ReturnNext5Primes()
+        public void Generate_StartingNumberIs0_ReturnFirstPrimeAfterZero()
         {
-            
+            var expected = new[] { 2 };
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+
+
+            var result = sut.Generate(0);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void Generate_StartingNumberIs798_ReturnFirstPrimeAfterInputNumber()
+        {
+            var sut = new PrimeNumberGeneratorBuilder().Build();
+            var expected = new[] { 809 };
+
+            var result = sut.Generate(798);
+
+            CollectionAssert.AreEqual(expected, result);
         }
     }
 }

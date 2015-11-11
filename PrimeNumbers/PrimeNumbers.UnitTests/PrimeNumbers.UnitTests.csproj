@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PrimeNumbers.Core\PrimeNumberGeneratorTests.cs" />
+    <Compile Include="PrimeNumbers.Tests.Common\PrimeNumberGeneratorBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

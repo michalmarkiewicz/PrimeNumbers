@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace PrimeNumbers.Core
 {
@@ -17,6 +19,20 @@ namespace PrimeNumbers.Core
                     return false;
 
             return number != 1;
+        }
+
+        public IEnumerable<int> Generate(int fromNumber)
+        {
+            var primes = new List<int>();
+            while (primes.Count < 1)
+            {
+                if (IsPrime(fromNumber))
+                    primes.Add(fromNumber);
+
+                fromNumber++;
+            }
+
+            return primes;
         }
     }
 }
