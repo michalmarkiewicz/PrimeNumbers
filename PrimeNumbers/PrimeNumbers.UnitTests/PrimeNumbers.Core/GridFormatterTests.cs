@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PrimeNumbers.Core;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
