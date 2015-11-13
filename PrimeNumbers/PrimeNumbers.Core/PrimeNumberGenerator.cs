@@ -27,9 +27,9 @@ namespace PrimeNumbers.Core
             for (int i = 3; (i * i) <= number; i += 2)
                 if ((number % i) == 0)
                     return false;
-
+            
             return number != 1;
-        }
+         }
 
         public IEnumerable<int> Generate(int fromNumber)
         {

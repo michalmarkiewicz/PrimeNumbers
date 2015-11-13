@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrimeNumbers.Core\FibonacciGeneratorTests.cs" />
     <Compile Include="PrimeNumbers.Core\GridMultiplicatorTests.cs" />
     <Compile Include="PrimeNumbers.Core\GridFormatterTests.cs" />
     <Compile Include="PrimeNumbers.Core\PrimeNumberEngineTests.cs" />

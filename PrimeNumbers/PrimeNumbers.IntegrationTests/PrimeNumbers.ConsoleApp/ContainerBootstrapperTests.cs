@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System;
+using Microsoft.Practices.Unity;
 using NUnit.Framework;
 using PrimeNumbers.ConsoleApp;
 using PrimeNumbers.Contracts;
@@ -51,6 +52,20 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
             var result = sut.Resolve<IPrimeNumberEngine>();
 
             Assert.IsInstanceOf<PrimeNumberEngine>(result);
+        }
+
+        [Test]
+        public void Configure_PrimeNumberEngine()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                GetValue(i);
+            }
+        }
+
+        private static void GetValue(int arg0)
+        {
+            Console.WriteLine(String.Format("{0} : {1}", arg0, (arg0 & 1) == 0));
         }
     }
 }
