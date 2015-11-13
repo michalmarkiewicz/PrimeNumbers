@@ -37,5 +37,33 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core
 
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
+        public void GetNumbers_OneNumberFromFibonacciSequence_GenerateFibonacciSequenceAndFormattGridToString()
+        {
+            var expected = " \t1\r\n1\t1";
+            var sut = new NumbersEngineBuilder().WithGenerator(new FibonacciGenerator())
+                                                    .WithGridMultiplicator(new GridMultiplicator())
+                                                    .WithFormatter(new GridFormatter())
+                                                    .Build();
+
+            var result = sut.GetNumbers(1);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [Test]
+        public void GetNumbers_ThreeNumbersFromFibonacciSequence_GenerateFibonacciSequenceAndFormattGridToString()
+        {
+            var expected = " \t1\t1\t2\r\n1\t1\t1\t2\r\n1\t1\t1\t2\r\n2\t2\t2\t4";
+            var sut = new NumbersEngineBuilder().WithGenerator(new FibonacciGenerator())
+                                                    .WithGridMultiplicator(new GridMultiplicator())
+                                                    .WithFormatter(new GridFormatter())
+                                                    .Build();
+
+            var result = sut.GetNumbers(3);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
