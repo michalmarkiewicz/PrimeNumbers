@@ -51,7 +51,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
 
             var result = sut.Resolve<IPrimeNumberEngine>();
 
-            Assert.IsInstanceOf<PrimeNumberEngine>(result);
+            Assert.IsInstanceOf<NumbersEngine>(result);
         }
     }
 }

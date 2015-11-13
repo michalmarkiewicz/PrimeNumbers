@@ -7,7 +7,7 @@ using PrimeNumbers.Tests.Common.Builders;
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 {
     [TestFixture]
-    public class PrimeNumberEngineTests
+    public class NumberEngineTests
     {
         private IArrayFormatter formatter;
 
@@ -18,13 +18,13 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         }
 
         [Test]
-        public void GetPrimes_ReadStringValue_GenerateOnePrimesAndFormattGridToString()
+        public void GetNumbers_ReadStringValue_GenerateOnePrimesAndFormattGridToString()
         {
             var expected = " \t2\r\n2\t4";
             formatter.Formatt(null).ReturnsForAnyArgs(x => expected);
-            var sut = new PrimeNumberEngineBuilder().WithFormatter(formatter).Build();
+            var sut = new NumbersEngineBuilder().WithFormatter(formatter).Build();
 
-            var result = sut.GetPrimes(1);
+            var result = sut.GetNumbers(1);
 
             Assert.AreEqual(expected, result);
         }
@@ -32,7 +32,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [Test]
         public void InitializeObject_NullPrimeNumberGenerator_ThrowArgumentNullException()
         {
-            var builder = new PrimeNumberEngineBuilder().WithGenerator(null);
+            var builder = new NumbersEngineBuilder().WithGenerator(null);
 
             Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
         }
@@ -40,7 +40,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [Test]
         public void InitializeObject_NullGridMultiplicator_ThrowArgumentNullException()
         {
-            var builder = new PrimeNumberEngineBuilder().WithGridMultiplicator(null);
+            var builder = new NumbersEngineBuilder().WithGridMultiplicator(null);
 
             Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
         }
@@ -48,7 +48,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
         [Test]
         public void InitializeObject_NullArrayFormatter_ThrowArgumentNullException()
         {
-            var builder = new PrimeNumberEngineBuilder().WithFormatter(null);
+            var builder = new NumbersEngineBuilder().WithFormatter(null);
 
             Assert.Throws<ArgumentNullException>(() => { builder.Build(); });
         }

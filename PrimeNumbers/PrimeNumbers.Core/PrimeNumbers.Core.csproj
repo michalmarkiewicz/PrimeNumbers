@@ -43,7 +43,7 @@
     <Compile Include="GridFormatter.cs" />
     <Compile Include="GridMultiplicator.cs" />
     <Compile Include="NameConstant.cs" />
-    <Compile Include="PrimeNumberEngine.cs" />
+    <Compile Include="NumbersEngine.cs" />
     <Compile Include="PrimeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

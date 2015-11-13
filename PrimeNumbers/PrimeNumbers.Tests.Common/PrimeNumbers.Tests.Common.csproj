@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\PrimeNumberEngineBuilder.cs" />
+    <Compile Include="Builders\NumbersEngineBuilder.cs" />
     <Compile Include="Builders\PrimeNumberGeneratorBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

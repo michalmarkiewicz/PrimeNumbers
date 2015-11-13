@@ -4,13 +4,13 @@ using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class PrimeNumberEngine : IPrimeNumberEngine
+    public class NumbersEngine : IPrimeNumberEngine
     {
         private readonly INumbersGenerator generator;
         private readonly IGridMultiplicator multiplicator;
         private readonly IArrayFormatter formatter;
 
-        public PrimeNumberEngine(INumbersGenerator generator, IGridMultiplicator multiplicator, IArrayFormatter formatter)
+        public NumbersEngine(INumbersGenerator generator, IGridMultiplicator multiplicator, IArrayFormatter formatter)
         {
             if (generator == null) throw new ArgumentNullException(nameof(generator));
             if (multiplicator == null) throw new ArgumentNullException(nameof(multiplicator));
@@ -21,7 +21,7 @@ namespace PrimeNumbers.Core
             this.formatter = formatter;
         }
 
-        public string GetPrimes(int primesAfterNumber)
+        public string GetNumbers(int primesAfterNumber)
         {
             var primes = generator.Generate(primesAfterNumber).ToList();
             var grid = multiplicator.Calculate(primes);

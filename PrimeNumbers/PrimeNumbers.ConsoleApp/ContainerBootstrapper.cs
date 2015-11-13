@@ -11,7 +11,7 @@ namespace PrimeNumbers.ConsoleApp
             container.RegisterType<IArrayFormatter, GridFormatter>();
             container.RegisterType<IGridMultiplicator, GridMultiplicator>();
             container.RegisterType<INumbersGenerator, PrimeGenerator>(NameConstant.PrimeGeneratorName, new InjectionConstructor(10));
-            container.RegisterType<IPrimeNumberEngine, PrimeNumberEngine>(new InjectionConstructor(
+            container.RegisterType<IPrimeNumberEngine, NumbersEngine>(new InjectionConstructor(
                                                                           new ResolvedParameter<INumbersGenerator>(NameConstant.PrimeGeneratorName),
                                                                           new ResolvedParameter<IGridMultiplicator>(),
                                                                           new ResolvedParameter<IArrayFormatter>()));

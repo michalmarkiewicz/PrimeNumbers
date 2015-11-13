@@ -27,7 +27,7 @@ namespace PrimeNumbers.ConsoleApp
                         break;
 
                     var number = ConvertInput(input);
-                    var result = engine.GetPrimes(number);
+                    var result = engine.GetNumbers(number);
 
                     Console.WriteLine(result);
                     Console.WriteLine();
