@@ -4,6 +4,7 @@ using NUnit.Framework;
 using PrimeNumbers.ConsoleApp;
 using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
+using PrimeNumbers.Core.NumberGenerators;
 
 namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
 {
@@ -11,7 +12,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
     public class ContainerBootstrapperTests
     {
         [Test]
-        public void Configure_IArrayFormatter_RegisterTypes()
+        public void Configure_IArrayFormatter_ReturnRegisteredType()
         {
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
@@ -22,7 +23,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
         }
 
         [Test]
-        public void Configure_IGridMultiplicator_RegisterTypes()
+        public void Configure_IGridMultiplicator_ReturnRegisteredType()
         {
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
@@ -33,7 +34,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
         }
 
         [Test]
-        public void Configure_IPrimeNumberGenerator_RegisterTypes()
+        public void Configure_INumberGeneratorAndNamePrime_ReturnRegisteredType()
         {
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
@@ -44,7 +45,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
         }
 
         [Test]
-        public void Configure_PrimeNumberEngine_RegisterTypes()
+        public void Configure_PrimeNumberEngine_ReturnRegisteredType()
         {
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
@@ -52,6 +53,17 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
             var result = sut.Resolve<IPrimeNumberEngine>();
 
             Assert.IsInstanceOf<NumbersEngine>(result);
+        }
+
+        [Test]
+        public void Configure_INumberGeneratorAndNameFibonacci_ReturnRegisteredType()
+        {
+            var sut = new UnityContainer();
+            new ContainerBootstrapper().Configure(sut);
+
+            var result = sut.Resolve<INumbersGenerator>(NameConstant.FibonacciGeneratorName);
+
+            Assert.IsInstanceOf<FibonacciGenerator>(result);
         }
     }
 }

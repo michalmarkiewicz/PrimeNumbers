@@ -39,12 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FibonacciGenerator.cs" />
+    <Compile Include="NumberGenerators\FibonacciGenerator.cs" />
     <Compile Include="GridFormatter.cs" />
     <Compile Include="GridMultiplicator.cs" />
     <Compile Include="NameConstant.cs" />
     <Compile Include="NumbersEngine.cs" />
-    <Compile Include="PrimeGenerator.cs" />
+    <Compile Include="NumberGenerators\PrimeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

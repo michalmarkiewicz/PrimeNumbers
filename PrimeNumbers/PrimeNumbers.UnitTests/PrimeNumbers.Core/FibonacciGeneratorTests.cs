@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using PrimeNumbers.Core;
+using PrimeNumbers.Core.NumberGenerators;
 
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 {

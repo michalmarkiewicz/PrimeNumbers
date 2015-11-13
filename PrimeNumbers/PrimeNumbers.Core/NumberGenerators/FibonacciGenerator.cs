@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using PrimeNumbers.Contracts;
 
-namespace PrimeNumbers.Core
+namespace PrimeNumbers.Core.NumberGenerators
 {
-    public class FibonacciGenerator
+    public class FibonacciGenerator : INumbersGenerator
     {
-        public IEnumerable Generate(int numberOfItems)
+        public IEnumerable<int> Generate(int numberOfItems)
         {
             if (numberOfItems == 1)
                 return new[] { 1 };

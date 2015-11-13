@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using PrimeNumbers.Core;
+using PrimeNumbers.Core.NumberGenerators;
 using PrimeNumbers.Tests.Common.Builders;
 
 namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core

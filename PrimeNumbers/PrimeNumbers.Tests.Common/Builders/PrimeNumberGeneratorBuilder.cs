@@ -1,10 +1,10 @@
 ﻿using PrimeNumbers.Core;
+using PrimeNumbers.Core.NumberGenerators;
 
 namespace PrimeNumbers.Tests.Common.Builders
 {
     public class PrimeNumberGeneratorBuilder
     {
-        private PrimeGenerator generator;
         public int NumberOfPrimes { get; private set; }
 
         public PrimeNumberGeneratorBuilder()

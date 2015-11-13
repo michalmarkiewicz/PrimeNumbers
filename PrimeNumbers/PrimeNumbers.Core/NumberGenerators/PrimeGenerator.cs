@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using PrimeNumbers.Contracts;
 
-namespace PrimeNumbers.Core
+namespace PrimeNumbers.Core.NumberGenerators
 {
     public class PrimeGenerator : IPrimeGenerator
     {
