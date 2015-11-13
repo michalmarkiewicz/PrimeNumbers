@@ -8,7 +8,7 @@ namespace PrimeNumbers.Core
         public IEnumerable Generate(int numberOfItems)
         {
             if (numberOfItems == 1)
-                return new int[] { 1 };
+                return new[] { 1 };
 
             var sequence = new List<int>() { 1, 1 };
             if (numberOfItems == 2)

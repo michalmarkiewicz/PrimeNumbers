@@ -34,13 +34,12 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 
             CollectionAssert.AreEqual(expected, result);
         }
-
-        [Test]
-        public void Generate_FourNumbersFromSequence_ReturnCollectionOfFibonacciNumbers()
+        
+        [TestCase(4, new int[] { 1, 1, 2, 3 })]
+        [TestCase(9, new int[] { 1, 1, 2, 3, 5, 8, 13, 21, 34 })]
+        public void Generate_FourNumbersFromSequence_ReturnCollectionOfFibonacciNumbers(int number, int[] expected)
         {
-            var expected = new List<int>() { 1, 1, 2, 3 };
-
-            var result = sut.Generate(4);
+            var result = sut.Generate(number);
 
             CollectionAssert.AreEqual(expected, result);
         }
