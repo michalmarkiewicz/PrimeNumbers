@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
+using PrimeNumbers.Common;
 using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.ConsoleApp

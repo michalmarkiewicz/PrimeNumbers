@@ -3,7 +3,7 @@ using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
 using PrimeNumbers.Core.NumberGenerators;
 
-namespace PrimeNumbers.ConsoleApp
+namespace PrimeNumbers.Common
 {
     public class ContainerBootstrapper
     {

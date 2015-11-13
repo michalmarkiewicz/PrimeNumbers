@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using NUnit.Framework;
-using PrimeNumbers.ConsoleApp;
+using PrimeNumbers.Common;
 using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
 using PrimeNumbers.Core.NumberGenerators;

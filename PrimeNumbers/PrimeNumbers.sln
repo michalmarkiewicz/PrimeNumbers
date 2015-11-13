@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.Contracts", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.IntegrationTests", "PrimeNumbers.IntegrationTests\PrimeNumbers.IntegrationTests.csproj", "{A877CBFB-8A8B-45C0-8AAC-713F7897ED5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.ConsoleApp", "PrimeNumbers.ConsoleApp\PrimeNumbers.ConsoleApp.csproj", "{7AD06120-C3C2-4322-9F02-804842DFA8B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.ConsoleApp.Prime", "PrimeNumbers.ConsoleApp\PrimeNumbers.ConsoleApp.Prime.csproj", "{7AD06120-C3C2-4322-9F02-804842DFA8B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeNumbers.Common", "PrimeNumbers.Common\PrimeNumbers.Common.csproj", "{518D2BD4-09CE-4E71-A286-329F87579802}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{7AD06120-C3C2-4322-9F02-804842DFA8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD06120-C3C2-4322-9F02-804842DFA8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD06120-C3C2-4322-9F02-804842DFA8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{518D2BD4-09CE-4E71-A286-329F87579802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518D2BD4-09CE-4E71-A286-329F87579802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518D2BD4-09CE-4E71-A286-329F87579802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518D2BD4-09CE-4E71-A286-329F87579802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
