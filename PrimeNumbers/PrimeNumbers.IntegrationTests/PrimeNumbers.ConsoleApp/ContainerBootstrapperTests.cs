@@ -38,7 +38,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
 
-            var result = sut.Resolve<IPrimeGenerator>();
+            var result = sut.Resolve<INumbersGenerator>(NameConstant.PrimeGeneratorName);
 
             Assert.IsInstanceOf<PrimeGenerator>(result);
         }

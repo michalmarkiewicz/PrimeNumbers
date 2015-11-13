@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NSubstitute;
+﻿using NSubstitute;
 using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
 
@@ -12,18 +7,18 @@ namespace PrimeNumbers.Tests.Common.Builders
     public class PrimeNumberEngineBuilder
     {
         private int primeNumbersToGenerate = 1;
-        private IPrimeGenerator generator;
+        private INumbersGenerator generator;
         private IGridMultiplicator gridMultiplicator;
         private IArrayFormatter formatter;
 
         public PrimeNumberEngineBuilder()
         {
-            generator = Substitute.For<IPrimeGenerator>();
+            generator = Substitute.For<INumbersGenerator>();
             gridMultiplicator = Substitute.For<IGridMultiplicator>();
             formatter = Substitute.For<IArrayFormatter>();
         }
 
-        public PrimeNumberEngineBuilder WithGenerator(IPrimeGenerator newGenerator)
+        public PrimeNumberEngineBuilder WithGenerator(INumbersGenerator newGenerator)
         {
             generator = newGenerator;
             return this;
