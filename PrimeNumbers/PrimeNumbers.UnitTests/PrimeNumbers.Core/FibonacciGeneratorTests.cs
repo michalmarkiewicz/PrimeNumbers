@@ -36,13 +36,24 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
             CollectionAssert.AreEqual(expected, result);
         }
         
-        [TestCase(4, new int[] { 1, 1, 2, 3 })]
-        [TestCase(9, new int[] { 1, 1, 2, 3, 5, 8, 13, 21, 34 })]
+        [TestCase(4, new[] { 1, 1, 2, 3 })]
+        [TestCase(9, new[] { 1, 1, 2, 3, 5, 8, 13, 21, 34 })]
         public void Generate_FourNumbersFromSequence_ReturnCollectionOfFibonacciNumbers(int number, int[] expected)
         {
             var result = sut.Generate(number);
 
             CollectionAssert.AreEqual(expected, result);
+        }
+
+        [TestCase(-1)]
+        [TestCase(-111)]
+        [TestCase(0)]
+        [TestCase(int.MinValue)]
+        public void Generate_InputNumberNegative_ReturnEmptyCollection(int number)
+        {
+            var result = sut.Generate(number);
+
+            CollectionAssert.IsEmpty(result);
         }
     }
 }

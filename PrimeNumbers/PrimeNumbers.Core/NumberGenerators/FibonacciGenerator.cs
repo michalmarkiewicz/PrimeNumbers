@@ -8,6 +8,9 @@ namespace PrimeNumbers.Core.NumberGenerators
     {
         public IEnumerable<int> Generate(int numberOfItems)
         {
+            if (numberOfItems <= 0)
+                return new int[0];
+
             if (numberOfItems == 1)
                 return new[] { 1 };
 
