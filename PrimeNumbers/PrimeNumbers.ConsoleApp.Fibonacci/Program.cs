@@ -4,7 +4,7 @@ using PrimeNumbers.Common;
 using PrimeNumbers.Contracts;
 using PrimeNumbers.Core;
 
-namespace PrimeNumbers.ConsoleApp.Prime
+namespace PrimeNumbers.ConsoleApp.Fibonacci
 {
     class Program
     {
@@ -13,16 +13,16 @@ namespace PrimeNumbers.ConsoleApp.Prime
             var container = new UnityContainer();
             new ContainerBootstrapper().Configure(container);
 
-            var engine = container.Resolve<INumberEngine>(ConstantNames.PrimeEngineName);
+            var engine = container.Resolve<INumberEngine>(ConstantNames.FibonacciEngineName);
 
-            Console.WriteLine("---- Prime Numbers Generator ----");
+            Console.WriteLine("---- Fibonacci Numbers Generator ----");
             Console.WriteLine("To exit type 'exit'");
-            
+
             while (true)
             {
                 try
                 {
-                    Console.WriteLine("Specify a number after which primes should be generated: ");
+                    Console.WriteLine("Specify the lenght of Fibonacci sequence: ");
                     var input = Console.ReadLine();
 
                     if (input.ToLower() == "exit")

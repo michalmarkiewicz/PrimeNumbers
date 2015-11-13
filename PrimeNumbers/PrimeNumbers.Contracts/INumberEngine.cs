@@ -1,6 +1,6 @@
 ﻿namespace PrimeNumbers.Contracts
 {
-    public interface IPrimeNumberEngine
+    public interface INumberEngine
     {
         string GetNumbers(int primesAfterNumber);
     }

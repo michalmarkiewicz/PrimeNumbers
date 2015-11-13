@@ -11,12 +11,20 @@ namespace PrimeNumbers.Common
         {
             container.RegisterType<IArrayFormatter, GridFormatter>();
             container.RegisterType<IGridMultiplicator, GridMultiplicator>();
-            container.RegisterType<INumbersGenerator, PrimeGenerator>(NameConstant.PrimeGeneratorName, new InjectionConstructor(10));
-            container.RegisterType<INumbersGenerator, FibonacciGenerator>(NameConstant.FibonacciGeneratorName);
-            container.RegisterType<IPrimeNumberEngine, NumbersEngine>(new InjectionConstructor(
-                                                                          new ResolvedParameter<INumbersGenerator>(NameConstant.PrimeGeneratorName),
-                                                                          new ResolvedParameter<IGridMultiplicator>(),
-                                                                          new ResolvedParameter<IArrayFormatter>()));
+            container.RegisterType<INumbersGenerator, PrimeGenerator>(ConstantNames.PrimeGeneratorName, new InjectionConstructor(10));
+            container.RegisterType<INumbersGenerator, FibonacciGenerator>(ConstantNames.FibonacciGeneratorName);
+
+            // PRIME ENGINE
+            container.RegisterType<INumberEngine, NumbersEngine>(ConstantNames.PrimeEngineName, new InjectionConstructor(
+                                                                 new ResolvedParameter<INumbersGenerator>(ConstantNames.PrimeGeneratorName),
+                                                                 new ResolvedParameter<IGridMultiplicator>(),
+                                                                 new ResolvedParameter<IArrayFormatter>()));
+
+            // FIBONACCI ENGINE
+            container.RegisterType<INumberEngine, NumbersEngine>(ConstantNames.FibonacciEngineName, new InjectionConstructor(
+                                                                 new ResolvedParameter<INumbersGenerator>(ConstantNames.FibonacciGeneratorName),
+                                                                 new ResolvedParameter<IGridMultiplicator>(),
+                                                                 new ResolvedParameter<IArrayFormatter>()));
         }
     }
 }

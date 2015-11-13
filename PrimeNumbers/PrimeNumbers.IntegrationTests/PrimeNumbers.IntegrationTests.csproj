@@ -64,7 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrimeNumbers.ConsoleApp\ContainerBootstrapperTests.cs" />
+    <Compile Include="PrimeNumbers.Common\ContainerBootstrapperTests.cs" />
     <Compile Include="PrimeNumbers.Core\NumberEngineTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
