@@ -38,9 +38,9 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
             var sut = new UnityContainer();
             new ContainerBootstrapper().Configure(sut);
 
-            var result = sut.Resolve<IPrimeNumberGenerator>();
+            var result = sut.Resolve<IPrimeGenerator>();
 
-            Assert.IsInstanceOf<PrimeNumberGenerator>(result);
+            Assert.IsInstanceOf<PrimeGenerator>(result);
         }
 
         [Test]
@@ -52,20 +52,6 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.ConsoleApp
             var result = sut.Resolve<IPrimeNumberEngine>();
 
             Assert.IsInstanceOf<PrimeNumberEngine>(result);
-        }
-
-        [Test]
-        public void Configure_PrimeNumberEngine()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                GetValue(i);
-            }
-        }
-
-        private static void GetValue(int arg0)
-        {
-            Console.WriteLine(String.Format("{0} : {1}", arg0, (arg0 & 1) == 0));
         }
     }
 }

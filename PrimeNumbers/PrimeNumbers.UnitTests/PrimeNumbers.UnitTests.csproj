@@ -51,7 +51,7 @@
     <Compile Include="PrimeNumbers.Core\GridMultiplicatorTests.cs" />
     <Compile Include="PrimeNumbers.Core\GridFormatterTests.cs" />
     <Compile Include="PrimeNumbers.Core\PrimeNumberEngineTests.cs" />
-    <Compile Include="PrimeNumbers.Core\PrimeNumberGeneratorTests.cs" />
+    <Compile Include="PrimeNumbers.Core\PrimeGeneratorTests.cs" />
     <Compile Include="PrimeNumbers.Tests.Common\PrimeNumberEngineBuilderTests.cs" />
     <Compile Include="PrimeNumbers.Tests.Common\PrimeNumberGeneratorBuilderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

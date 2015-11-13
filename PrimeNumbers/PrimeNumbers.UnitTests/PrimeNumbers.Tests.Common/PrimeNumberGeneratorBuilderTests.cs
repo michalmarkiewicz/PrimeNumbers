@@ -12,7 +12,7 @@ namespace PrimeNumbers.UnitTests.PrimeNumbers.Tests.Common
         {
             var generator = new PrimeNumberGeneratorBuilder().Build();
 
-            Assert.IsInstanceOf<PrimeNumberGenerator>(generator);
+            Assert.IsInstanceOf<PrimeGenerator>(generator);
         }
     }
 }

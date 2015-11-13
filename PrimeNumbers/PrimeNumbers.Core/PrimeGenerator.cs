@@ -4,11 +4,11 @@ using PrimeNumbers.Contracts;
 
 namespace PrimeNumbers.Core
 {
-    public class PrimeNumberGenerator : IPrimeNumberGenerator
+    public class PrimeGenerator : IPrimeGenerator
     {
         private readonly int numberOfPrimesToGet;
 
-        public PrimeNumberGenerator(int numberOfPrimesToGet)
+        public PrimeGenerator(int numberOfPrimesToGet)
         {
             if (numberOfPrimesToGet < 1)
                 throw new ArgumentException("Value numberOfPrimesToGet have to be greater than 0.");

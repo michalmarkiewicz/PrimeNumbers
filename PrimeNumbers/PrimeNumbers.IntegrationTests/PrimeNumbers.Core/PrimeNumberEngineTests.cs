@@ -12,7 +12,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core
         {
             var numberOfPrimesToGet = 1;
             var expected = " \t2\r\n2\t4";
-            var sut = new PrimeNumberEngineBuilder().WithGenerator(new PrimeNumberGenerator(numberOfPrimesToGet))
+            var sut = new PrimeNumberEngineBuilder().WithGenerator(new PrimeGenerator(numberOfPrimesToGet))
                                                     .WithGridMultiplicator(new GridMultiplicator())
                                                     .WithFormatter(new GridFormatter())
                                                     .Build();
@@ -27,7 +27,7 @@ namespace PrimeNumbers.IntegrationTests.PrimeNumbers.Core
         {
             var numberOfPrimesToGet = 2;
             var expected = " \t2\t3\r\n2\t4\t6\r\n3\t6\t9";
-            var sut = new PrimeNumberEngineBuilder().WithGenerator(new PrimeNumberGenerator(numberOfPrimesToGet))
+            var sut = new PrimeNumberEngineBuilder().WithGenerator(new PrimeGenerator(numberOfPrimesToGet))
                                                     .WithGridMultiplicator(new GridMultiplicator())
                                                     .WithFormatter(new GridFormatter())
                                                     .Build();

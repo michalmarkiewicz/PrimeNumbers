@@ -5,7 +5,7 @@ using PrimeNumbers.Tests.Common.Builders;
 namespace PrimeNumbers.UnitTests.PrimeNumbers.Core
 {
     [TestFixture]
-    public class PrimeNumberGeneratorTests
+    public class PrimeGeneratorTests
     {
         [TestCase(2)]
         [TestCase(3)]

@@ -4,7 +4,7 @@ namespace PrimeNumbers.Tests.Common.Builders
 {
     public class PrimeNumberGeneratorBuilder
     {
-        private PrimeNumberGenerator generator;
+        private PrimeGenerator generator;
         public int NumberOfPrimes { get; private set; }
 
         public PrimeNumberGeneratorBuilder()
@@ -18,9 +18,9 @@ namespace PrimeNumbers.Tests.Common.Builders
             return this;
         }
 
-        public PrimeNumberGenerator Build()
+        public PrimeGenerator Build()
         {
-            return new PrimeNumberGenerator(NumberOfPrimes);
+            return new PrimeGenerator(NumberOfPrimes);
         }
     }
 }

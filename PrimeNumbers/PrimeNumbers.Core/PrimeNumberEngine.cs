@@ -6,11 +6,11 @@ namespace PrimeNumbers.Core
 {
     public class PrimeNumberEngine : IPrimeNumberEngine
     {
-        private readonly IPrimeNumberGenerator generator;
+        private readonly IPrimeGenerator generator;
         private readonly IGridMultiplicator multiplicator;
         private readonly IArrayFormatter formatter;
 
-        public PrimeNumberEngine(IPrimeNumberGenerator generator, IGridMultiplicator multiplicator, IArrayFormatter formatter)
+        public PrimeNumberEngine(IPrimeGenerator generator, IGridMultiplicator multiplicator, IArrayFormatter formatter)
         {
             if (generator == null) throw new ArgumentNullException(nameof(generator));
             if (multiplicator == null) throw new ArgumentNullException(nameof(multiplicator));

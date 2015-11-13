@@ -10,7 +10,7 @@ namespace PrimeNumbers.ConsoleApp
         {
             container.RegisterType<IArrayFormatter, GridFormatter>();
             container.RegisterType<IGridMultiplicator, GridMultiplicator>();
-            container.RegisterType<IPrimeNumberGenerator, PrimeNumberGenerator>(new InjectionConstructor(10));
+            container.RegisterType<IPrimeGenerator, PrimeGenerator>(new InjectionConstructor(10));
             container.RegisterType<IPrimeNumberEngine, PrimeNumberEngine>();
         }
     }

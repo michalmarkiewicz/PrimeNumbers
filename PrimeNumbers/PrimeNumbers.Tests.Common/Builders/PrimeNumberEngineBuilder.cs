@@ -12,18 +12,18 @@ namespace PrimeNumbers.Tests.Common.Builders
     public class PrimeNumberEngineBuilder
     {
         private int primeNumbersToGenerate = 1;
-        private IPrimeNumberGenerator generator;
+        private IPrimeGenerator generator;
         private IGridMultiplicator gridMultiplicator;
         private IArrayFormatter formatter;
 
         public PrimeNumberEngineBuilder()
         {
-            generator = Substitute.For<IPrimeNumberGenerator>();
+            generator = Substitute.For<IPrimeGenerator>();
             gridMultiplicator = Substitute.For<IGridMultiplicator>();
             formatter = Substitute.For<IArrayFormatter>();
         }
 
-        public PrimeNumberEngineBuilder WithGenerator(IPrimeNumberGenerator newGenerator)
+        public PrimeNumberEngineBuilder WithGenerator(IPrimeGenerator newGenerator)
         {
             generator = newGenerator;
             return this;
